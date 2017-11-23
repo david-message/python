@@ -1,0 +1,37 @@
+第一步
+1.查看是安装了哪些shell ：cat /etc/shells
+2.如果已经安装zsh，使用命令切换：chsh -s /bin/zsh
+
+第二步
+
+由于zsh配置过于复杂难懂，所以有同学出了个oh-my-zsh
+1.通过命令获取： git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+2.先备份原来的zshrc(如果存在的话) ：cp ~/.zshrc ~/.zshrc.orig
+3.替换新的：cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+重新打开终端，你会看到不一样的东东。
+
+第三步
+
+1.自定义命令
+编辑：vi .zshrc
+如，可以加下面的自定义命令
+
+alias -s gz='tar -xzvf'
+alias -s tgz='tar -xzvf'
+alias -s zip='unzip'
+alias -s bz2='tar -xjvf'
+alias godev='ssh root@xxx' (此处需根据实际情况配置)
+......
+
+保存后使配置生效：source .zshrc
+
+2.设置插件
+oh-my-zsh 提供了近百种插件，目录~/.oh-my-zsh/plugins
+如：plugins=(git textmate ruby autojump osx mvn gradle)
+更多有趣插件：autojump,mvn
+
+3.选择的主题
+打开~/.zshrc，添加一行
+
+# 我自己选择的主题
+ZSH_THEME="af-magic"
