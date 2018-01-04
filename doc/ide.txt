@@ -1,0 +1,10 @@
+Insomnia
+Jupyter
+
+Groovy MOP\MetaClass
+http://attis-wong-163-com.iteye.com/blog/1235880
+
+
+Java Debug
+http://blog.csdn.net/kisimple/article/details/43355209
+https://docs.oracle.com/javase/8/docs/technotes/guides/jpda/jdwp-spec.html

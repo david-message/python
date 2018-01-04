@@ -44,6 +44,7 @@ def example1():
     pbar = ProgressBar(widgets=widgets, maxval=10000000).start()
     for i in range(1000000):
         # do something
+        # time.sleep(1)
         pbar.update(10 * i + 1)
     pbar.finish()
 
@@ -73,10 +74,11 @@ def example2():
 @example
 def example3():
     widgets = [Bar('>'), ' ', ETA(), ' ', ReverseBar('<')]
-    pbar = ProgressBar(widgets=widgets, maxval=10000000).start()
-    for i in range(1000000):
+    pbar = ProgressBar(widgets=widgets, maxval=1000).start()
+    for i in range(1000):
         # do something
-        pbar.update(10 * i + 1)
+        # time.sleep(0.05)
+        pbar.update(i)
     pbar.finish()
 
 
@@ -87,7 +89,7 @@ def example4():
                ' ', ETA(), ' ', FileTransferSpeed()]
     pbar = ProgressBar(widgets=widgets, maxval=500)
     pbar.start()
-    for i in range(100, 500 + 1, 50):
+    for i in range(50, 500 + 1, 5):
         time.sleep(0.2)
         pbar.update(i)
     pbar.finish()
@@ -232,8 +234,11 @@ def example19():
     pbar.finish()
 
 
-try:
-    for example in examples:
-        example()
-except KeyboardInterrupt:
-    sys.stdout('\nQuitting examples.\n')
+# try:
+#     for example in examples:
+#         example()
+# except KeyboardInterrupt:
+#     sys.stdout('\nQuitting examples.\n')
+
+if __name__ == '__main__':
+    example4()
